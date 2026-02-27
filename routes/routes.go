@@ -14,6 +14,8 @@ func SetupRouter() *gin.Engine {
 
 	r.Use(cors.New(cors.Config{
 		AllowOrigins: []string{
+			"https://salon-pro.netlify.app",
+			"https://salon-pro.netlify.app/",
 			"*",
 		},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
@@ -95,4 +97,5 @@ func SetupRouter() *gin.Engine {
 
 	return r
 }
+
 
