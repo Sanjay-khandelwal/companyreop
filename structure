@@ -1,0 +1,36 @@
+Salon-backend/
+├── config/
+│   ├── database.go
+│   └── performance.go
+├── controllers/
+│   ├── auth.go
+│   ├── customer.go
+│   ├── dashboard.go
+│   ├── invoice.go
+│   ├── profile.go
+│   ├── report.go
+│   └── service.go
+├── models/
+│   ├── customer.go
+│   ├── invoice.go
+│   ├── remainder.go
+│   ├── salon.go
+│   ├── service.go
+│   └── user.go
+├── routes/
+│   └── routes.go
+├── services/
+│   └── reminder_service.go
+├── utils/
+│   ├── auth.go
+│   ├── dates.go
+│   ├── errors.go
+│   ├── helpers.go
+│   ├── remainder.go
+│   └── validation.go
+├── .env
+├── .gitignore
+├── go.mod
+├── go.sum
+├── main.go
+└── structure
