@@ -13,18 +13,13 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins: []string{
-			"https://white-sky-0debbc31e.1.azurestaticapps.net",
-			"https://salon.zenithive.digital",
-			"https://salonpro.zenithive.digital",
-			"https://salon-pro.netlify.app",
-			"http://localhost:3000",
-			"*",
-		},
-		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Authorization", "Content-Type"},
-		AllowCredentials: true,
-	}))
+	AllowOriginsFunc: func(origin string) bool {
+		return true // or write your own validation
+	},
+	AllowMethods:     "GET,POST,PUT,DELETE,OPTIONS",
+	AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+	AllowCredentials: true,
+}))
 
 	r.Use(config.PerformanceLogger())
 
@@ -100,6 +95,7 @@ func SetupRouter() *gin.Engine {
 
 	return r
 }
+
 
 
 
